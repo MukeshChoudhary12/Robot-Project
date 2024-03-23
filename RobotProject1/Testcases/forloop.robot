@@ -20,10 +20,10 @@ ${LOG_OUT}    xpath=//a[text()='Logout']
 
 *** Keywords ***
 Login into application
-    ${options}=  Evaluate  sys.modules['selenium.webdriver'].EdgeOptions()  sys, selenium.webdriver
-    Call Method    ${options}    add_argument    --headless
-    create webdriver  Edge  options=${options}
-    Go To    ${URL}
+    # ${options}=  Evaluate  sys.modules['selenium.webdriver'].EdgeOptions()  sys, selenium.webdriver
+    # Call Method    ${options}    add_argument    --headless
+    # create webdriver  Edge  options=${options}
+    Open Browser    ${URL}    ${DEFINE_BROW}
     Maximize Browser Window
     Set Browser Implicit Wait    5s       
     Input Text    ${USERNAME_TXT}     Admin

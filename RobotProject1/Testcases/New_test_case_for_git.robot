@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${DEFINE_BROW}    Edge
+${DEFINE_BROW}    chrome
 ${URL}    https://opensource-demo.orangehrmlive.com/
 ${USERNAME_TXT}    xpath=//input[@name='username']
 ${PASSWORD_TXT}    xpath=//input[@name='password']
@@ -14,10 +14,10 @@ ${LOG_OUT}    xpath=//a[text()='Logout']
 
 *** Keywords ***
 Login into application
-    ${options}=  Evaluate  sys.modules['selenium.webdriver'].EdgeOptions()  sys, selenium.webdriver
-    Call Method    ${options}    add_argument    --headless
-    create webdriver  Edge  options=${options}
-    go to   ${URL}
+    # ${options}=  Evaluate  sys.modules['selenium.webdriver'].EdgeOptions()  sys, selenium.webdriver
+    # Call Method    ${options}    add_argument    --headless
+    # create webdriver  Edge  options=${options}
+    Open Browser   ${URL}    ${DEFINE_BROW}
     Maximize Browser Window
     Set Browser Implicit Wait    5s       
     Input Text    ${USERNAME_TXT}     Admin
