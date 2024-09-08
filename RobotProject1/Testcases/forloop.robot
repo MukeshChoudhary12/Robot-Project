@@ -1,6 +1,3 @@
-*** Settings ***
-Library    SeleniumLibrary
-
 *** Variables ***
 ${DEFINE_BROW}    Edge
 ${URL}    https://opensource-demo.orangehrmlive.com/
@@ -43,7 +40,7 @@ Click_Search_Button
     Click Element    ${SIDE_MENU_COLLAPSE}  
     Sleep    0.5    
     Click Element    ${SIDE_MENU_COLLAPSE}  
-Verify_search  
+Verify_search
     Wait Until Keyword Succeeds    6s    2s    Press Keys     ${SEARCH_BUTT}     CTRL+a  
     Sleep    1     
     Wait Until Keyword Succeeds    6s    2s    Press Keys     ${SEARCH_BUTT}     BACKSPACE    ENTER
@@ -66,6 +63,6 @@ Myfirstcase
          Input_Text_Search    ${text}
          Click_Search_Button    
          Verify_search              
-    END  
+    END
     Logout of application
     
