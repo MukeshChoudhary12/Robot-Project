@@ -1,1 +1,2 @@
-tHIS IS ELSE IF FILE 
+ 
+***settings***
